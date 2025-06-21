@@ -40,7 +40,7 @@ export function isTokenHeader(obj: unknown): obj is TokenHeader {
     return (
       'alg' in objWithAlg &&
       Object.values(AlgorithmTypes).includes(objWithAlg.alg as AlgorithmTypes) &&
-      (!('typ' in objWithAlg) || objWithAlg.typ === 'JWT')
+      (!('typ' in objWithAlg) || objWithAlg.typ === 'JWT' || objWithAlg.typ === 'at+jwt' )
     )
   }
   return false
